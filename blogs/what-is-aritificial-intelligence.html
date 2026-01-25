@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Techminty</title>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/be695597a3.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="../css/global.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+
+    <!-- Left: Logo -->
+    <div class="nav-logo">
+      <img src="../images/logo.png" alt="Techminty logo">
+      <span>Techminty</span>
+    </div>
+
+    <!-- Center: Links (desktop) -->
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../blogs.html">Blogs</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Right: Sign up + Hamburger -->
+    <div class="nav-actions">
+      <a href="../signup.html" class="signup-btn">Sign Up</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="../index.html">Home</a>
+    <a href="../blogs.html">Blogs</a>
+    <a href="../about.html">About</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../signup.html" class="mobile-signup">Sign Up</a>
+  </div>
+</header>
+
+<section class="blog-container">
+  <style>
+    .blog-container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+      font-family: "Segoe UI", sans-serif;
+      line-height: 1.8;
+      color: #222;
+    }
+    .back-btn{
+  background: black;
+  border:none;
+  color: white;
+  font-size:1rem;
+  font-weight: bold;
+  cursor:pointer;
+  margin-bottom:10px;
+  padding:8px 25px;
+  border-radius: 20px;
+}
+    .blog-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .blog-meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .blog-cover {
+      width: 100%;
+      border-radius: 14px;
+      margin-bottom: 30px;
+      height: 60vh;
+      width: 50vw;
+    }
+
+    .blog-container h2 {
+      margin-top: 35px;
+      margin-bottom: 10px;
+      font-size: 1.6rem;
+      color: #111;
+    }
+
+    .blog-container p {
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+
+    .blog-container ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .blog-container ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #f5f7ff;
+      border-left: 4px solid #4f46e5;
+      padding: 15px 18px;
+      border-radius: 6px;
+      margin: 25px 0;
+      font-weight: 500;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+
+    table th {
+      background: #f2f2f2;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .blog-title {
+        font-size: 1.9rem;
+      }
+     .blog-cover {
+      height: 30vh;
+      width: 90vw;
+    }
+    }
+  </style>
+    <button class="back-btn" onclick="goBack()">
+  Back
+</button>
+  <h1 class="blog-title">What Is Artificial Intelligence?</h1>
+  <div class="blog-meta">1 Jan 2026 · 6 min read</div>
+
+  <img src="../images/blog1.png" alt="Artificial Intelligence illustration" class="blog-cover">
+
+  <p>
+    Artificial Intelligence, commonly known as <strong>AI</strong>, is one of the most powerful
+    technologies shaping the modern world. From smartphones to smart cars, AI is silently
+    working behind the scenes to make machines behave intelligently.
+  </p>
+
+  <div class="highlight-box">
+    Artificial Intelligence is the ability of machines to think, learn,
+    and make decisions like humans.
+  </div>
+
+  <h2>How Does Artificial Intelligence Work?</h2>
+  <p>
+    AI works by collecting large amounts of data, finding patterns in that data,
+    and then using those patterns to make predictions or decisions.
+    The more data an AI system receives, the smarter it becomes.
+  </p>
+
+  <h2>Types of Artificial Intelligence</h2>
+  <ul>
+    <li><strong>Narrow AI:</strong> Designed for a specific task like voice assistants or recommendations.</li>
+    <li><strong>General AI:</strong> Can perform multiple tasks like a human (still not developed).</li>
+    <li><strong>Super AI:</strong> A future concept where AI surpasses human intelligence.</li>
+  </ul>
+
+  <h2>Real-Life Examples of AI</h2>
+  <ul>
+    <li>Face unlock and camera enhancements in smartphones</li>
+    <li>Video recommendations on YouTube and Netflix</li>
+    <li>Navigation and traffic prediction apps</li>
+    <li>Chatbots and virtual assistants</li>
+  </ul>
+
+  <h2>Advantages and Disadvantages</h2>
+  <table>
+    <tr>
+      <th>Advantages</th>
+      <th>Disadvantages</th>
+    </tr>
+    <tr>
+      <td>Works faster and more accurately</td>
+      <td>May reduce certain job roles</td>
+    </tr>
+    <tr>
+      <td>Can work 24/7 without breaks</td>
+      <td>Depends heavily on data</td>
+    </tr>
+    <tr>
+      <td>Handles large data easily</td>
+      <td>No emotions or creativity</td>
+    </tr>
+  </table>
+
+  <h2>Future of Artificial Intelligence</h2>
+  <p>
+    The future of AI is promising and exciting. AI is expected to improve healthcare,
+    education, transportation, and many other fields. However, human control and ethical
+    use will always be essential.
+  </p>
+
+  <div class="highlight-box">
+    AI is powerful, but humans will always guide its direction.
+  </div>
+
+  <p>
+    Artificial Intelligence is not magic — it is a tool created by humans to make
+    life smarter, easier, and more efficient when used responsibly.
+  </p>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <img src="../images/logo.png" alt="Techminty">
+      <p>Techminty</p>
+      <span>Tech made simple.</span>
+    </div>
+
+    <!-- 🔥 Link columns wrapper -->
+    <div class="footer-links-group">
+      <div class="footer-links">
+        <p>Quick Links</p>
+        <a href="../index.html">Home</a>
+        <a href="../blogs.html">Blogs</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+
+      <div class="footer-links">
+        <p>Social</p>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+        <a href="#">Telegram</a>
+      </div>
+
+      <div class="footer-links">
+        <p>Legal</p>
+        <a href="#">Terms</a>
+        <a href="#">Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <span>© 2025 Techminty · Built for curious minds</span>
+
+    <div class="social-icons">
+      <a href="#"><i class="fa-brands fa-github"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
+
+</footer>
+<script src="../js/ui.js"></script>
+<script>
+  function goBack(){
+    if (document.referrer) {
+      window.history.back();
+    } else {
+      window.location.href = "../blogs.html";
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Techminty</title>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/be695597a3.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="../css/global.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+
+    <!-- Left: Logo -->
+    <div class="nav-logo">
+      <img src="../images/logo.png" alt="Techminty logo">
+      <span>Techminty</span>
+    </div>
+
+    <!-- Center: Links (desktop) -->
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../blogs.html">Blogs</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Right: Sign up + Hamburger -->
+    <div class="nav-actions">
+      <a href="../signup.html" class="signup-btn">Sign Up</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="../index.html">Home</a>
+    <a href="../blogs.html">Blogs</a>
+    <a href="../about.html">About</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../signup.html" class="mobile-signup">Sign Up</a>
+  </div>
+</header>
+
+<section class="blog-container">
+  <style>
+       .back-btn{
+  background: black;
+  border:none;
+  color: white;
+  font-size:1rem;
+  font-weight: bold;
+  cursor:pointer;
+  margin-bottom:10px;
+  padding:8px 25px;
+  border-radius: 20px;
+}
+    .blog-container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+      font-family: "Segoe UI", sans-serif;
+      line-height: 1.8;
+      color: #222;
+    }
+
+    .blog-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .blog-meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .blog-cover {
+      width: 100%;
+      border-radius: 14px;
+      margin-bottom: 30px;
+    }
+
+    .blog-container h2 {
+      margin-top: 35px;
+      margin-bottom: 10px;
+      font-size: 1.6rem;
+      color: #111;
+    }
+
+    .blog-container p {
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+
+    .blog-container ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .blog-container ul li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-box {
+      background: #f0f9ff;
+      border-left: 4px solid #0284c7;
+      padding: 15px 18px;
+      border-radius: 6px;
+      margin: 25px 0;
+      font-weight: 500;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 25px 0;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+
+    table th {
+      background: #f2f2f2;
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .blog-title {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+<button class="back-btn" onclick="goBack()">
+  Back
+</button>
+  <h1 class="blog-title">What Is Machine Learning?</h1>
+  <div class="blog-meta">2 Jan 2026 · 5 min read</div>
+
+  <img src="../images/blog2.png" alt="Machine Learning illustration" class="blog-cover">
+
+  <p>
+    Machine Learning, often called <strong>ML</strong>, is a part of Artificial Intelligence
+    that allows computers to learn from data and improve their performance
+    without being explicitly programmed.
+  </p>
+
+  <div class="highlight-box">
+    Machine Learning means teaching machines to learn from experience.
+  </div>
+
+  <h2>How Does Machine Learning Work?</h2>
+  <p>
+    Machine Learning works by feeding data to a computer system.
+    The system studies patterns in the data and uses them to make predictions
+    or decisions in the future.
+  </p>
+
+  <h2>Types of Machine Learning</h2>
+  <ul>
+    <li><strong>Supervised Learning:</strong> Learns using labeled data (example: spam detection).</li>
+    <li><strong>Unsupervised Learning:</strong> Finds patterns without labeled data.</li>
+    <li><strong>Reinforcement Learning:</strong> Learns by trial and error using rewards.</li>
+  </ul>
+
+  <h2>Real-Life Examples of Machine Learning</h2>
+  <ul>
+    <li>Email spam filtering</li>
+    <li>Product recommendations on shopping apps</li>
+    <li>Voice recognition systems</li>
+    <li>Fraud detection in banks</li>
+  </ul>
+
+  <h2>Machine Learning vs Traditional Programming</h2>
+  <table>
+    <tr>
+      <th>Traditional Programming</th>
+      <th>Machine Learning</th>
+    </tr>
+    <tr>
+      <td>Rules are written by humans</td>
+      <td>Rules are learned from data</td>
+    </tr>
+    <tr>
+      <td>Needs frequent updates</td>
+      <td>Improves automatically</td>
+    </tr>
+    <tr>
+      <td>Limited flexibility</td>
+      <td>Highly adaptable</td>
+    </tr>
+  </table>
+
+  <h2>Why Is Machine Learning Important?</h2>
+  <p>
+    Machine Learning helps systems become smarter over time.
+    It saves human effort, improves accuracy, and powers many modern technologies
+    we use every day.
+  </p>
+
+  <div class="highlight-box">
+    Machine Learning is the backbone of modern Artificial Intelligence.
+  </div>
+
+  <p>
+    In simple words, Machine Learning allows machines to learn from data,
+    just like humans learn from experience.
+  </p>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <img src="../images/logo.png" alt="Techminty">
+      <p>Techminty</p>
+      <span>Tech made simple.</span>
+    </div>
+
+    <!-- 🔥 Link columns wrapper -->
+    <div class="footer-links-group">
+      <div class="footer-links">
+        <p>Quick Links</p>
+        <a href="../index.html">Home</a>
+        <a href="../blogs.html">Blogs</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+
+      <div class="footer-links">
+        <p>Social</p>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+        <a href="#">Telegram</a>
+      </div>
+
+      <div class="footer-links">
+        <p>Legal</p>
+        <a href="#">Terms</a>
+        <a href="#">Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <span>© 2025 Techminty · Built for curious minds</span>
+
+    <div class="social-icons">
+      <a href="#"><i class="fa-brands fa-github"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
+
+</footer>
+<script src="../js/ui.js"></script>
+<script>
+  function goBack(){
+    if (document.referrer) {
+      window.history.back();
+    } else {
+      window.location.href = "../blogs.html";
+    }
+  }
+</script>
+</body>
+</html>
