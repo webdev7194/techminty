@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Techminty – Tech & AI Blogs Made Simple</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<meta name="application-name" content="Techminty">
+<meta name="apple-mobile-web-app-title" content="Techminty">
+<meta property="og:site_name" content="Techminty">
+<link rel="icon" type="image/png" href="/images/logo.png">
+<link rel="apple-touch-icon" href="/images/logo.png">
+<link rel="shortcut icon" href="/images/logo.png">
+<meta name="description" content="Techminty is a modern tech blog covering AI, machine learning, web development, and digital trends in simple language.">
+
+<meta name="keywords" content="tech blog, AI blog, technology articles, machine learning basics, web development blog">
+
+<meta property="og:title" content="Techminty – Tech & AI Blogs Made Simple">
+<meta property="og:description" content="Learn technology, AI, and web development through easy and practical blogs on Techminty.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://webdev7194.github.io/techminty/">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Techminty – Tech & AI Blogs Made Simple">
+<meta name="twitter:description" content="Simple and practical blogs on AI, ML, and modern technology.">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/be695597a3.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/global.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+
+    <!-- Left: Logo -->
+    <div class="nav-logo">
+      <img src="images/logo.png" alt="Techminty logo">
+      <span>Techminty</span>
+    </div>
+
+    <!-- Center: Links (desktop) -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="ac">Home</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Right: Sign up + Hamburger -->
+    <div class="nav-actions">
+      <a href="signup.html" id="authBtn" class="signup-btn">Sign Up</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="blogs.html">Blogs</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="signup.html" id="authBtn1" class="mobile-signup">Sign Up</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Tech Made Simple</h1>
+
+    <p style="text-align: center;">
+      Practical tech knowledge, explained clearly for students, learners and curious minds.
+    </p>
+  </div>
+  <div class="hero-search">
+      <input
+        type="text"
+        placeholder="Search articles, AI tools, careers…"
+        aria-label="Search blogs"
+        id="search"
+      />
+      <button onclick="blogs()">
+        Find Now
+      </button>
+    </div>
+</section>
+
+<!-- ================= FEATURED BLOGS ================= -->
+<section class="featured-section">
+  <div class="section-header">
+    <h2>Featured reads</h2>
+    <p>Editor’s picks you shouldn’t miss</p>
+  </div>
+
+  <div class="featured-grid">
+    
+  </div>
+</section>
+
+<!-- ================= RECENT BLOGS ================= -->
+<section class="recent-section">
+  <div class="section-header">
+    <h2>Latest articles</h2>
+    <p>Fresh insights from Techminty</p>
+  </div>
+
+  <div class="recent-grid">
+    
+  </div>
+
+  <div class="explore-more">
+    <a href="blogs.html">Explore all blogs</a>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+
+  <!-- Newsletter -->
+  <div class="footer-newsletter">
+    <div class="newsletter-text">
+      <h3>Read smarter, not louder.</h3>
+      <p>
+        One short email when a genuinely useful article is published.
+        No spam. No hype.
+      </p>
+    </div>
+
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit" onclick="window.location.href='support.html'">Subscribe</button>
+    </form>
+  </div>
+
+  <!-- Main footer -->
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Techminty">
+      <p>Techminty</p>
+      <span>Tech made simple.</span>
+    </div>
+
+    <!-- Link columns wrapper -->
+    <div class="footer-links-group">
+      <div class="footer-links">
+        <p>Quick Links</p>
+        <a href="index.html">Home</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-links">
+        <p>Social</p>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+        <a href="#">Telegram</a>
+      </div>
+
+      <div class="footer-links">
+        <p>Legal</p>
+        <a href="#">Terms</a>
+        <a href="#">Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <span>© 2025 Techminty · Built for curious minds</span>
+
+    <div class="social-icons">
+      <a href="#"><i class="fa-brands fa-github"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
+
+</footer>
+<script src="js/home.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>

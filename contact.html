@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contact – Techminty</title>
+
+<meta name="description" content="Contact Techminty for questions, feedback, or collaboration related to technology and AI content.">
+
+<meta name="keywords" content="contact tech blog, techminty contact, tech feedback">
+
+<meta property="og:title" content="Contact – Techminty">
+<meta property="og:description" content="Get in touch with Techminty for queries and suggestions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://webdev7194.github.io/techminty/contact.html">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+
+<link rel="icon" type="image/png" href="/images/logo.png">
+<link rel="apple-touch-icon" href="/images/logo.png">
+<link rel="shortcut icon" href="/images/logo.png">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/be695597a3.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/about.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+
+    <!-- Left: Logo -->
+    <div class="nav-logo">
+      <img src="images/logo.png" alt="Techminty logo">
+      <span>Techminty</span>
+    </div>
+
+    <!-- Center: Links (desktop) -->
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="ac">Contact</a></li>
+    </ul>
+
+    <!-- Right: Sign up + Hamburger -->
+    <div class="nav-actions">
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="blogs.html">Blogs</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="signup.html" class="mobile-signup">Sign Up</a>
+  </div>
+</header>
+
+<main class="contact-page">
+
+  <!-- Intro -->
+  <section class="contact-hero">
+    <h1>Contact</h1>
+    <p>
+      Have a question, suggestion, or something worth discussing?
+      Drop a message — we read every one.
+    </p>
+  </section>
+
+  <!-- Contact form -->
+  <section class="contact-section">
+  <form
+    class="contact-form"
+    action="https://api.web3forms.com/submit"
+    method="POST"
+    id="contactForm"
+  >
+
+    <!-- Web3Forms access key -->
+    <input
+      type="hidden"
+      name="access_key"
+      value="996e56a2-1a9e-49ab-a5c8-19f6b429a3b8"
+    >
+
+    <!-- Email subject -->
+    <input
+      type="hidden"
+      name="subject"
+      value="New Message from Techminty"
+    >
+
+    <!-- Sender name -->
+    <input
+      type="hidden"
+      name="from_name"
+      value="Techminty Website"
+    >
+
+    <!-- Anti-spam honeypot -->
+    <input
+      type="checkbox"
+      name="botcheck"
+      style="display:none;"
+    >
+
+    <!-- Redirect after success -->
+    <input
+      type="hidden"
+      name="redirect"
+      value="https://techminty.github.io/techminty/index.html"
+    >
+
+    <!-- Name -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your name"
+        required
+      >
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Your email address"
+        required
+      >
+    </div>
+
+    <!-- Message -->
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="5"
+        placeholder="What would you like to say?"
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit" class="contact-btn">
+      Send message
+    </button>
+
+  </form>
+</section>
+
+</main>
+
+<footer class="site-footer">
+
+  <!-- Main footer -->
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Techminty">
+      <p>Techminty</p>
+      <span>Tech made simple.</span>
+    </div>
+
+    <!-- 🔥 Link columns wrapper -->
+    <div class="footer-links-group">
+      <div class="footer-links">
+        <p>Quick Links</p>
+        <a href="index.html">Home</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-links">
+        <p>Social</p>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+        <a href="#">Telegram</a>
+      </div>
+
+      <div class="footer-links">
+        <p>Legal</p>
+        <a href="#">Terms</a>
+        <a href="#">Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <span>© 2025 Techminty · Built for curious minds</span>
+
+    <div class="social-icons">
+      <a href="#"><i class="fa-brands fa-github"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
+
+</footer>
+<script src="js/ui.js"></script>
+<script>
+    window.onload = function() {
+        // Reset the form fields when the page loads
+        document.getElementById("contactForm").reset();
+    };
+</script>
+</body>
+</html>

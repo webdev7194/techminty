@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /signup.html
+
+Sitemap: https://webdev7194.github.io/techminty/sitemap.xml

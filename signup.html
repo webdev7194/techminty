@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+
+<link rel="icon" type="image/png" href="/images/logo.png">
+<link rel="apple-touch-icon" href="/images/logo.png">
+<link rel="shortcut icon" href="/images/logo.png">
+
+<title>Sign In – Techminty</title>
+
+<meta name="description" content="Sign in to Techminty to access personalized features and stay connected with the latest tech blogs.">
+
+<meta name="robots" content="noindex, nofollow">
+
+<meta property="og:title" content="Sign In – Techminty">
+<meta property="og:description" content="Sign in to Techminty.">
+<meta property="og:type" content="website">
+  <script src="https://kit.fontawesome.com/be695597a3.js" crossorigin="anonymous"></script>
+
+  <style>
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family:system-ui, sans-serif;
+      background:#f6f7f9;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .auth-box{
+      width:100%;
+      max-width:420px;
+      background:#fff;
+      padding: 15px;
+      margin: 50px 20px;
+      border-radius:14px;
+    }
+
+    .brand{
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:1.6rem;
+    }
+
+    .brand p{
+      margin-top:4px;
+      color:#666;
+      font-size:0.95rem;
+    }
+
+    .back-inline{
+      background: black;
+      border:none;
+      cursor:pointer;
+      font-size:0.85rem;
+      display:flex;
+      align-items:left;
+      color: white;
+      width: 100px;
+      margin: 20px 2px;
+    }
+
+    label{
+      font-size:0.85rem;
+      color:#444;
+      margin-bottom:4px;
+      display:block;
+    }
+
+    input{
+      width:100%;
+      padding:12px;
+      margin-bottom:14px;
+      border-radius:10px;
+      border:1px solid #ccc;
+      font-size:0.95rem;
+    }
+
+    input:focus{
+      outline:none;
+      border-color:#000;
+    }
+
+    button{
+      width:100%;
+      padding:12px;
+      border-radius:10px;
+      cursor:pointer;
+      border:none;
+      font-size:0.95rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+    }
+
+    .primary{
+      background:#000;
+      color:#fff;
+    }
+
+    .google{
+      background:#fff;
+      border:1px solid #000;
+      margin-top:12px;
+    }
+
+    .divider{
+      text-align:center;
+      margin:16px 0;
+      color:#777;
+      font-size:0.85rem;
+    }
+
+    .switch-text{
+      text-align:center;
+      font-size: 1rem;
+      margin-top: 20px;
+      color:#555;
+    }
+
+    .switch-btn{
+      background:none;
+      margin: 2px;
+      border:none;
+      font-weight: bold;
+      cursor:pointer;
+      text-decoration: underline;
+    }
+
+    .error{
+      color:#d93025;
+      font-size:0.85rem;
+      margin-top:12px;
+      text-align:center;
+    }
+
+    .register-only{
+      display:none;
+      animation: fade 0.3s ease;
+    }
+
+    @keyframes fade{
+      from{ opacity:0; transform:translateY(-6px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="auth-box">
+
+  <div class="brand">
+    <h1>Techminty</h1>
+    <p id="subtitle">Sign in to continue</p>
+  </div>
+
+  <button class="back-inline" id="backBtn">
+    Back to Home
+  </button>
+
+  <div class="register-only">
+    <label>Name</label>
+    <input id="name" type="text" placeholder="Your name">
+  </div>
+
+  <label>Email</label>
+  <input id="email" type="email" placeholder="you@example.com">
+
+  <label>Password</label>
+  <input id="password" type="password" placeholder="••••••••">
+
+  <button class="primary" onclick="handleEmailAuth()">Continue</button>
+
+  <div class="divider">or</div>
+
+  <button class="google" onclick="googleAuth()">
+    <i class="fa-brands fa-google"></i>
+    Continue with Google
+  </button>
+
+  <p class="switch-text">
+    <span id="switchText">New here ?</span>
+    <button class="switch-btn" onclick="toggleAuth()">Create an account</button>
+  </p>
+
+  <div class="error" id="error"></div>
+
+</div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import {
+    getAuth,
+    signInWithEmailAndPassword,
+    createUserWithEmailAndPassword,
+    GoogleAuthProvider,
+    signInWithPopup,
+    updateProfile
+  } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDLJGTj9m_TXSNA2xH7klTJxdhu-B8iwv8",
+    authDomain: "techminty-blogs.firebaseapp.com",
+    projectId: "techminty-blogs",
+    appId: "1:845264904960:web:a28e8f270b837ff78249e5"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  let isRegister = false;
+
+  window.toggleAuth = function(){
+    isRegister = !isRegister;
+
+    document.querySelector(".register-only").style.display =
+      isRegister ? "block" : "none";
+
+    document.getElementById("subtitle").textContent =
+      isRegister ? "Create your Techminty account" : "Sign in to continue";
+
+    document.getElementById("switchText").textContent =
+      isRegister ? "Already have an account ?" : "New here ?";
+
+    document.querySelector(".switch-btn").textContent =
+      isRegister ? "Sign in" : "Create an account";
+  };
+
+  document.getElementById("backBtn").onclick = () => {
+    location.href = 'index.html';
+  };
+
+  window.handleEmailAuth = async function(){
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const errorBox = document.getElementById("error");
+
+    errorBox.textContent = "";
+
+    try{
+      if(isRegister){
+        const res = await createUserWithEmailAndPassword(auth, email, password);
+        if(name){
+          await updateProfile(res.user, { displayName: name });
+        }
+        saveUser(res.user);
+      }else{
+        const res = await signInWithEmailAndPassword(auth, email, password);
+        saveUser(res.user);
+      }
+    }catch(err){
+      errorBox.textContent = err.message.replace("Firebase:", "");
+    }
+  };
+
+  window.googleAuth = async function(){
+    try{
+      const res = await signInWithPopup(auth, provider);
+      saveUser(res.user);
+    }catch(err){
+      document.getElementById("error").textContent =
+        err.message.replace("Firebase:", "");
+    }
+  };
+
+  function saveUser(user){
+    localStorage.setItem("signedIn", "true");
+    localStorage.setItem("userName", user.displayName || user.email);
+    location.href = "index.html";
+  }
+</script>
+
+</body>
+</html>

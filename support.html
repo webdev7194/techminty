@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Techminty – Tech & AI Blogs Made Simple</title>
+  <script src="https://kit.fontawesome.com/be695597a3.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/support.css" />
+  <link rel="stylesheet" href="css/global.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+
+    <!-- Left: Logo -->
+    <div class="nav-logo">
+      <img src="images/logo.png" alt="Techminty logo">
+      <span>Techminty</span>
+    </div>
+
+    <!-- Center: Links (desktop) -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="ac">Home</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <!-- Right: Sign up + Hamburger -->
+    <div class="nav-actions">
+      <a href="signup.html" id="authBtn" class="signup-btn">Sign Up</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="blogs.html">Blogs</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="signup.html" id="authBtn1" class="mobile-signup">Sign Up</a>
+  </div>
+</header>
+
+<section class="support-section">
+
+  <div class="support-header">
+    <h1>Support Techminty ❤️</h1>
+    <p>
+      If our blogs help you understand tech better, you can support us.
+      Every contribution keeps Techminty alive and growing.
+    </p>
+  </div>
+
+  <div class="support-cards">
+
+    <div class="support-card" data-amount="20">
+      <h3>☕ Buy Me a Coffee</h3>
+      <p>Small support, big motivation.</p>
+      <span class="price">₹20</span>
+      <button class="support-btn">Support</button>
+    </div>
+
+    <div class="support-card" data-amount="50">
+      <h3>💡 Lite Support</h3>
+      <p>Help us maintain the site.</p>
+      <span class="price">₹50</span>
+      <button class="support-btn">Support</button>
+    </div>
+
+    <div class="support-card" data-amount="100">
+      <h3>🚀 Pro Support</h3>
+      <p>Support deeper content.</p>
+      <span class="price">₹100</span>
+      <button class="support-btn">Support</button>
+    </div>
+
+    <div class="support-card" data-amount="250">
+      <h3>🔥 Pro Max Support</h3>
+      <p>Help Techminty scale.</p>
+      <span class="price">₹250</span>
+      <button class="support-btn">Support</button>
+    </div>
+
+  </div>
+
+  <!-- QR + Email -->
+  <div class="support-checkout" id="checkoutBox">
+    <h2>Complete Your Support</h2>
+
+    <img id="qrImage" src="" alt="UPI QR Code">
+
+    <p class="instruction">
+      Scan the QR code and complete the payment.
+      After payment, enter your email below.
+    </p>
+
+    <form id="supportForm">
+  <input
+    type="email"
+    name="email"
+    id="supportEmail"
+    placeholder="Your email address"
+    required
+  >
+
+  <input type="hidden" name="amount" id="supportAmount">
+
+  <button type="submit" id="confirmSupport">
+    I Have Paid
+  </button>
+</form>
+
+    <p class="note">
+      This is a voluntary support. Payments are non-refundable.
+    </p>
+  </div>
+
+</section>
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Techminty">
+      <p>Techminty</p>
+      <span>Tech made simple.</span>
+    </div>
+
+    <!-- Link columns wrapper -->
+    <div class="footer-links-group">
+      <div class="footer-links">
+        <p>Quick Links</p>
+        <a href="index.html">Home</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-links">
+        <p>Social</p>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+        <a href="#">Telegram</a>
+      </div>
+
+      <div class="footer-links">
+        <p>Legal</p>
+        <a href="#">Terms</a>
+        <a href="#">Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <span>© 2025 Techminty · Built for curious minds</span>
+
+    <div class="social-icons">
+      <a href="#"><i class="fa-brands fa-github"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
+
+</footer>
+<script src="js/ui.js"></script>
+<script type="module" src="js/support.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</body>
+</html>

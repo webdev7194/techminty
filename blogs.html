@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+
+<link rel="icon" type="image/png" href="/images/logo.png">
+<link rel="apple-touch-icon" href="/images/logo.png">
+<link rel="shortcut icon" href="/images/logo.png">
+<title>Blogs – Techminty</title>
+
+<meta name="description" content="Explore all Techminty blogs on AI, machine learning, web development, and career-focused technology topics.">
+
+<meta name="keywords" content="AI blogs, tech articles, machine learning blogs, web development posts">
+
+<meta property="og:title" content="Blogs – Techminty">
+<meta property="og:description" content="Browse all technology and AI blogs published on Techminty.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://webdev7194.github.io/techminty/blogs.html">
+
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/be695597a3.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/blogs.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="images/logo.png" alt="Techminty logo">
+      <span>Techminty</span>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blogs.html" class="ac">Blogs</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="signup.html" class="signup-btn">Sign Up</a>
+      <button class="nav-toggle" id="navToggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="blogs.html">Blogs</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="signup.html" class="mobile-signup">Sign Up</a>
+  </div>
+</header>
+
+<main class="blogs-page">
+
+  <section class="blogs-header">
+    <h1>Blogs</h1>
+    <p>Thoughtful articles on technology, AI, and careers.</p>
+  </section>
+
+  <!-- Search -->
+  <section class="blogs-search">
+    <input
+      type="text"
+      id="blogser"
+      placeholder="Search articles, AI tools, careers…"
+      aria-label="Search blogs"
+    />
+    <button id="searchBtn">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+
+    <ul class="search-dropdown"></ul>
+  </section>
+
+  <!-- Categories -->
+  <section class="blogs-categories">
+    <button class="active">All</button>
+    <button>AI</button>
+    <button>Web</button>
+    <button>Career</button>
+    <button>Tech</button>
+    <button>Security</button>
+  </section>
+
+  <!-- Blogs grid -->
+  <section class="blogs-grid"></section>
+
+  <!-- Load more -->
+  <div class="load-more-wrapper">
+    <button id="loadMoreBtn">Load more</button>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+
+  <!-- Main footer -->
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Techminty">
+      <p>Techminty</p>
+      <span>Tech made simple.</span>
+    </div>
+
+    <!-- Link columns wrapper -->
+    <div class="footer-links-group">
+      <div class="footer-links">
+        <p>Quick Links</p>
+        <a href="index.html">Home</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-links">
+        <p>Social</p>
+        <a href="#">LinkedIn</a>
+        <a href="#">Twitter</a>
+        <a href="#">Telegram</a>
+      </div>
+
+      <div class="footer-links">
+        <p>Legal</p>
+        <a href="#">Terms</a>
+        <a href="#">Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <span>© 2025 Techminty · Built for curious minds</span>
+
+    <div class="social-icons">
+      <a href="#"><i class="fa-brands fa-github"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
+
+</footer>
+
+<script src="js/ui.js"></script>
+<script src="js/blogs.js"></script>
+</body>
+</html>
