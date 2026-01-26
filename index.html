@@ -35,7 +35,16 @@
   <link rel="stylesheet" href="css/global.css" />
 </head>
 <body>
-
+<section id="preloader" style="
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff url('loader.jpg') center center / cover no-repeat;
+  z-index: 999999;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+">
+</section>
 <header class="site-header">
   <nav class="navbar">
 
@@ -190,6 +199,36 @@
   </div>
 
 </footer>
+<script>
+  (function () {
+    const preloader = document.getElementById("preloader");
+
+    // ✅ Disable all scroll + interaction until loaded
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    function hidePreloader() {
+      if (!preloader) return;
+
+      preloader.style.opacity = "0";
+      preloader.style.visibility = "hidden";
+
+      // ✅ Enable scrolling back
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 450);
+    }
+
+    // ✅ Hide only after everything loads (images, css, fonts, all)
+    window.addEventListener("load", hidePreloader);
+
+    // ✅ backup safety
+    setTimeout(hidePreloader, 12000);
+  })();
+</script>
 <script src="js/home.js"></script>
 <script src="js/ui.js"></script>
 </body>
