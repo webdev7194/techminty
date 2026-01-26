@@ -203,9 +203,31 @@
   (function () {
     const preloader = document.getElementById("preloader");
 
-    // ✅ Disable all scroll + interaction until loaded
-    document.body.style.overflow = "hidden";
+    // ✅ Block scrolling and interaction until everything loads
     document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    document.body.style.pointerEvents = "none"; // disable clicks
+    if (preloader) preloader.style.pointerEvents = "all";
+
+    // ✅ Wait for all images to load (including cached ones)
+    function waitForImages() {
+      const images = Array.from(document.images);
+
+      if (images.length === 0) return Promise.resolve();
+
+      return Promise.all(
+        images.map(img => {
+          return new Promise(resolve => {
+            if (img.complete && img.naturalHeight !== 0) {
+              resolve();
+            } else {
+              img.addEventListener("load", resolve, { once: true });
+              img.addEventListener("error", resolve, { once: true }); // even if image fails, continue
+            }
+          });
+        })
+      );
+    }
 
     function hidePreloader() {
       if (!preloader) return;
@@ -213,20 +235,40 @@
       preloader.style.opacity = "0";
       preloader.style.visibility = "hidden";
 
-      // ✅ Enable scrolling back
-      document.body.style.overflow = "";
+      // ✅ Enable everything back
       document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+      document.body.style.pointerEvents = "";
 
       setTimeout(() => {
         preloader.style.display = "none";
-      }, 450);
+      }, 550);
     }
 
-    // ✅ Hide only after everything loads (images, css, fonts, all)
-    window.addEventListener("load", hidePreloader);
+    async function startPreloader() {
+      try {
+        // ✅ Wait for full window load first
+        await new Promise(resolve => {
+          if (document.readyState === "complete") resolve();
+          else window.addEventListener("load", resolve, { once: true });
+        });
 
-    // ✅ backup safety
-    setTimeout(hidePreloader, 12000);
+        // ✅ Then ensure all images are loaded
+        await waitForImages();
+
+        // ✅ Extra tiny delay for smoother feel
+        setTimeout(hidePreloader, 300);
+
+      } catch (err) {
+        // If anything goes wrong, still hide
+        hidePreloader();
+      }
+    }
+
+    startPreloader();
+
+    // ✅ Safety fallback (if something stuck)
+    setTimeout(hidePreloader, 15000);
   })();
 </script>
 <script src="js/home.js"></script>
